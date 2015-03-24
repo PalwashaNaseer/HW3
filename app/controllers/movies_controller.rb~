@@ -2,13 +2,8 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.find(:all, :order => params[:sort_by])
-	if params[:sort_by] == 'title'
-		@title_header = ''
-	elsif params[:sort_by] == 'release_date'
-		@release_date_header = ''
- 	end
-   end
+    @movies = Movie.all
+  end
 
   def show
     id = params[:id] # retrieve movie ID from URI route
